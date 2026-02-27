@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/src/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/src/components/ui/Card';
@@ -17,13 +17,18 @@ export function Login() {
   const { user } = useAuth();
 
   // If already logged in, redirect to dashboard
-  if (user) {
-    if (user.email === 'mdrifat.contact@gmail.com') {
-      navigate('/admin');
-    } else {
-      navigate('/dashboard');
+  useEffect(() => {
+    if (user) {
+      if (user.email === 'mdrifat.contact@gmail.com') {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
     }
-    return null;
+  }, [user, navigate]);
+
+  if (user) {
+    return null; // Prevent rendering while redirecting
   }
 
   const handleAuth = async (e: FormEvent) => {
