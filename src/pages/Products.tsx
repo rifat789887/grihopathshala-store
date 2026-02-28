@@ -78,7 +78,7 @@ export function Products() {
               <Card key={product.id} className="group overflow-hidden border-slate-200 hover:border-brand-200 hover:shadow-md transition-all flex flex-col">
                 <div className="aspect-[4/3] bg-slate-100 relative overflow-hidden">
                   <img 
-                    src={product.imageUrl} 
+                    src={product.imageUrl || undefined} 
                     alt={product.title} 
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"

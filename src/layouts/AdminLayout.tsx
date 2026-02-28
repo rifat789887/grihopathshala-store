@@ -41,6 +41,12 @@ export function AdminLayout() {
       <Link to="/admin/bundles" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
         <Package className="h-4 w-4" /> Bundles
       </Link>
+      <Link to="/admin/courses" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+        <Package className="h-4 w-4" /> LMS Courses
+      </Link>
+      <Link to="/admin/enrollments" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+        <CheckSquare className="h-4 w-4" /> Enrollments
+      </Link>
       <Link to="/admin/approvals" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
         <CheckSquare className="h-4 w-4" /> Approvals
       </Link>

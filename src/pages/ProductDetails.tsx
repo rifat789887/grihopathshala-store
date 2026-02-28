@@ -54,7 +54,7 @@ export function ProductDetails() {
                 className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-sm"
               >
                 <img 
-                  src={product.imageUrl} 
+                  src={product.imageUrl || undefined} 
                   alt={product.title}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

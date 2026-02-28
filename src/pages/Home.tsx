@@ -1,7 +1,7 @@
 import { Button } from '@/src/components/ui/Button';
 import { Card, CardContent } from '@/src/components/ui/Card';
 import { Badge } from '@/src/components/ui/Badge';
-import { ArrowRight, BookOpen, CheckCircle2, MessageCircle, ShieldCheck, Star, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, CheckCircle2, MessageCircle, ShieldCheck, Star, Users, BadgeCheck, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/src/contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -47,11 +47,11 @@ export function Home() {
               </Badge>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
+            <motion.h1 variants={fadeIn} className="text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
               {lang === 'en' ? (
-                <>Master Your Studies with <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">Grihopathshala Store</span></>
+                <>Get the best study materials and courses at <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">Grihopathshala Store</span>, at the best discount prices!</>
               ) : (
-                <><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">গৃহপাঠশালা স্টোর</span>-এর সাথে আপনার পড়াশোনায় সেরা হোন</>
+                <><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-teal-200">গৃহপাঠশালা স্টোর</span> - "দেশের সেরা ও মানসম্মত স্টাডি ম্যাটেরিয়াল এবং কোর্স সমাহার।" !</>
               )}
             </motion.h1>
             
@@ -73,7 +73,7 @@ export function Home() {
             </motion.div>
 
             {/* Trust Signals Under Hero */}
-            <motion.div variants={fadeIn} className="pt-12 flex flex-wrap justify-center gap-8 text-sm text-slate-400 font-medium">
+            <motion.div variants={fadeIn} className="pt-12 flex flex-wrap justify-center gap-6 lg:gap-8 text-sm text-slate-400 font-medium">
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-brand-400" /> {t('trust.students')}
               </div>
@@ -82,6 +82,12 @@ export function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-brand-400" /> {t('trust.quality')}
+              </div>
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="h-5 w-5 text-emerald-400" /> {t('trust.authentic')}
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="h-5 w-5 text-brand-400" /> {t('trust.guarantee')}
               </div>
             </motion.div>
           </motion.div>
@@ -154,7 +160,7 @@ export function Home() {
                 <Card className="group overflow-hidden border-slate-200 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/10 transition-all h-full flex flex-col bg-white">
                   <div className="aspect-[4/3] bg-slate-100 relative overflow-hidden">
                     <img 
-                      src={product.imageUrl} 
+                      src={product.imageUrl || undefined} 
                       alt={product.title} 
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"

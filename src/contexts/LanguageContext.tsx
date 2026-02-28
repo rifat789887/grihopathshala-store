@@ -26,6 +26,8 @@ const translations: Record<string, Record<Language, string>> = {
   'trust.students': { en: '10,000+ Students', bn: '১০,০০০+ শিক্ষার্থী' },
   'trust.access': { en: 'Instant Access', bn: 'ইনস্ট্যান্ট এক্সেস' },
   'trust.quality': { en: 'Expert Curated', bn: 'এক্সপার্ট দ্বারা তৈরি' },
+  'trust.authentic': { en: '100% Authentic', bn: '১০০% অথেন্টিক' },
+  'trust.guarantee': { en: '100% Money-Back Guarantee', bn: '১০০% মানি-ব্যাক গ্যারান্টি' },
 
   // How it works
   'hiw.title': { en: 'How Ordering Works', bn: 'অর্ডার করার নিয়ম' },

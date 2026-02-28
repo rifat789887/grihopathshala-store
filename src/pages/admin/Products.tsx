@@ -141,7 +141,7 @@ export function Products() {
             {products.map((product) => (
               <div key={product.id} className="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col">
                 <div className="aspect-video relative bg-slate-900">
-                  <img src={product.imageUrl} alt={product.title} className="w-full h-full object-cover opacity-80" />
+                  <img src={product.imageUrl || undefined} alt={product.title} className="w-full h-full object-cover opacity-80" />
                   <div className="absolute top-3 left-3 flex gap-2">
                     <Badge variant="secondary" className="bg-slate-900/80 text-white border-slate-700 uppercase shadow-sm backdrop-blur-sm">
                       {product.category}
@@ -293,7 +293,7 @@ export function Products() {
                 </div>
                 <div className="h-32 rounded-xl border-2 border-dashed border-slate-700 bg-slate-900 flex flex-col items-center justify-center text-slate-500 relative overflow-hidden">
                   {formData.imageUrl ? (
-                    <img src={formData.imageUrl} alt="Preview" className="absolute inset-0 w-full h-full object-cover opacity-50" onError={(e) => (e.currentTarget.style.display = 'none')} />
+                    <img src={formData.imageUrl || undefined} alt="Preview" className="absolute inset-0 w-full h-full object-cover opacity-50" onError={(e) => (e.currentTarget.style.display = 'none')} />
                   ) : (
                     <>
                       <ImageIcon className="h-8 w-8 mb-2 opacity-50" />
@@ -364,7 +364,7 @@ export function Products() {
               {/* Image Area */}
               <div className="aspect-[4/3] bg-slate-100 relative">
                 {formData.imageUrl ? (
-                  <img src={formData.imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                  <img src={formData.imageUrl || undefined} alt="Preview" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-slate-300">
                     <ImageIcon className="h-12 w-12" />
