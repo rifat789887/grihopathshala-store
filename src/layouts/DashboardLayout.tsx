@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Outlet, Link, useNavigate, Navigate, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, Settings, LogOut, User, Menu, X, Home } from 'lucide-react';
+import { LayoutDashboard, Package, Settings, LogOut, User, Menu, X, Home, FileText } from 'lucide-react';
 import { useAuth } from '@/src/contexts/AuthContext';
 
 export function DashboardLayout() {
@@ -41,6 +41,13 @@ export function DashboardLayout() {
         className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${location.pathname.includes('/dashboard/courses') ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}
       >
         <Package className="h-4 w-4" /> My Courses
+      </Link>
+      <Link 
+        to="/dashboard/pdfs" 
+        onClick={() => setIsMobileMenuOpen(false)}
+        className={`flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md ${location.pathname.includes('/dashboard/pdfs') ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}
+      >
+        <FileText className="h-4 w-4" /> My PDFs
       </Link>
       <Link 
         to="/dashboard/purchases" 

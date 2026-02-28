@@ -1,5 +1,5 @@
 import { Outlet, Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, Users, CheckSquare, Settings, LogOut, Home, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Package, Users, CheckSquare, Settings, LogOut, Home, Menu, X, FileText } from 'lucide-react';
 import { useAuth } from '@/src/contexts/AuthContext';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -46,6 +46,9 @@ export function AdminLayout() {
       </Link>
       <Link to="/admin/enrollments" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
         <CheckSquare className="h-4 w-4" /> Enrollments
+      </Link>
+      <Link to="/admin/pdfs" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
+        <FileText className="h-4 w-4" /> PDFs
       </Link>
       <Link to="/admin/approvals" className="flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md hover:bg-slate-800 hover:text-white transition-colors">
         <CheckSquare className="h-4 w-4" /> Approvals

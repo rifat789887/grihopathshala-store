@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ProductProvider } from './contexts/ProductContext';
 import { BundleProvider } from './contexts/BundleContext';
 import { CourseProvider } from './contexts/CourseContext';
+import { PdfProvider } from './contexts/PdfContext';
 import { MainLayout } from './layouts/MainLayout';
 import { DashboardLayout } from './layouts/DashboardLayout';
 import { AdminLayout } from './layouts/AdminLayout';
@@ -15,6 +16,8 @@ import { Login } from './pages/Login';
 import { About } from './pages/About';
 import { Purchases } from './pages/dashboard/Purchases';
 import { MyCourses } from './pages/dashboard/MyCourses';
+import { MyPdfs } from './pages/dashboard/MyPdfs';
+import { PdfReader } from './pages/dashboard/PdfReader';
 import { CoursePlayer } from './pages/dashboard/CoursePlayer';
 import { Settings as DashboardSettings } from './pages/dashboard/Settings';
 import { Approvals } from './pages/admin/Approvals';
@@ -25,6 +28,8 @@ import { Settings as AdminSettings } from './pages/admin/Settings';
 import { Overview as AdminOverview } from './pages/admin/Overview';
 import { AdminCourses } from './pages/admin/AdminCourses';
 import { AdminEnrollments } from './pages/admin/AdminEnrollments';
+import { AdminPdfs } from './pages/admin/AdminPdfs';
+import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 
 export default function App() {
   return (
@@ -32,9 +37,11 @@ export default function App() {
       <ProductProvider>
         <BundleProvider>
           <CourseProvider>
-            <LanguageProvider>
-              <BrowserRouter>
-                <Routes>
+            <PdfProvider>
+              <LanguageProvider>
+                <BrowserRouter>
+                  <PWAInstallPrompt />
+                  <Routes>
                   {/* Public Routes */}
                   <Route element={<MainLayout />}>
                     <Route path="/" element={<Home />} />
@@ -71,6 +78,8 @@ export default function App() {
                     } />
                     <Route path="purchases" element={<Purchases />} />
                     <Route path="courses" element={<MyCourses />} />
+                    <Route path="pdfs" element={<MyPdfs />} />
+                    <Route path="pdfs/:pdfId" element={<PdfReader />} />
                     <Route path="courses/:courseId" element={<CoursePlayer />} />
                     <Route path="settings" element={<DashboardSettings />} />
                   </Route>
@@ -82,6 +91,7 @@ export default function App() {
                     <Route path="bundles" element={<AdminBundles />} />
                     <Route path="courses" element={<AdminCourses />} />
                     <Route path="enrollments" element={<AdminEnrollments />} />
+                    <Route path="pdfs" element={<AdminPdfs />} />
                     <Route path="approvals" element={<Approvals />} />
                     <Route path="users" element={<AdminUsers />} />
                     <Route path="settings" element={<AdminSettings />} />
@@ -89,6 +99,7 @@ export default function App() {
                 </Routes>
               </BrowserRouter>
             </LanguageProvider>
+            </PdfProvider>
           </CourseProvider>
         </BundleProvider>
       </ProductProvider>
